@@ -1,0 +1,93 @@
+/* MEDIA QUERIES for smaller screens */
+
+/* Näytöt alle 1200px */
+@media (max-width: 480px) {
+
+    .wallpaper-text h1 {
+        font-size: 50px;
+        padding-top: 15%;
+    }
+}
+
+/* Näytöt alle 768px */
+@media (max-width: 468px) {
+    .banner-card {
+        background-size: contain;
+        background-attachment: cover;
+        padding-bottom: 10px;
+        background-size: cover; /* Skaalautuu oikein puhelimessa */
+        min-height: 40vh; /* Vielä pienempi korkeus puhelimille */
+    }
+
+    .wallpaper-text h1 {
+        font-size: 40px;
+    }
+
+    .footer {
+        padding: 0px;
+    }
+
+    .footer h2 {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+    .wallpaper-text button {
+        font-size: 12px;
+        padding: 7px 12px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 2%; 
+    }
+
+    .banner-line button {
+        font-size: 12px;
+        padding: 7px 12px;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .banner-line p {
+        font-size: 12px;
+    }
+
+    .banner-line {
+        padding: 8px;       
+    }
+}
+
+/* Näytöt alle 480px (esim. puhelimet) */
+@media (max-width: 470px) {
+    .banner-card {
+        min-height: 40vh; /* Pienempi bannerin korkeus */
+    }
+
+    .wallpaper-text h1 {
+        font-size: 30px;
+    }
+
+    .text-section, .text-section li {
+        font-size: 12px;
+    }
+
+
+    .video-section iframe{
+        height: 190px;
+    }
+
+    .video-section p{
+        font-size: 16px;
+        padding-top: 64%;
+    }
+
+    .text-s1{
+        font-size: 16px;
+    }
+    
+    .text-s2{
+        font-size: 16px;
+    }
+   
+}

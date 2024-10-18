@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koti</title>
+    <link rel="stylesheet" href="maalit.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner-card">
+            <div class="banner-line" id="banner-line">
+                <p>Kotkantien maalaus- ja tapetointi</p>
+                <div class="navigation-buttons">
+                    <button class="active">Koti</button>
+                    <a href="../Palvelut/Palvelut.html"><button>Palvelut</button></a>
+                    <a href="../Yhteystiedot/yhteystiedot.html"><button>Yhteystiedot</button></a>
+                </div>
+            </div>
+            <div class="wallpaper-text">
+                <h1>Your Color</h1>
+                <a href="../TestaaVareja/TestaaVärejä.html"><button>Testaa värejä</button></a>
+            </div>
+            <div class="text1">
+                <h2>Galleria</h2>
+                <p>Paras tapetti ja maali valikoima juuri meiltä!</p>
+            </div>
+            <!-- Modaalinen ikkuna -->
+            <div id="imageModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modal-image" src="" alt="Modal Image">
+                    <div id="image-description"></div>
+                </div>
+            </div>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <p class="red-text">Tapetit</p>
+                    <a href="../index.html/index.html"><img src="../Maalit/kuvat/tapetti.webp" alt="Kuva 1"></a>
+                </div>
+                <div class="gallery-item">
+                    <p>Valkoinen</p>
+                    <img src="../Maalit/kuvat/valkoinen.webp" alt="Kuva 2">
+                </div>
+                <div class="gallery-item">
+                    <p>Musta</p>
+                    <img src="../Maalit/kuvat/musta.webp" alt="Kuva 3">
+                </div>
+                <div class="gallery-item">
+                    <p>Keltainen</p>
+                    <img src="../Maalit/kuvat/keltainen.webp" alt="Kuva 4">
+                </div>
+                <div class="gallery-item">
+                    <p>Violetti</p>
+                    <img src="../Maalit/kuvat/violetti.webp" alt="Kuva 5">
+                </div>
+            </div>
+            <!-- Piilotetut kuvat -->
+            <div class="hidden-images" id="hidden-images">
+                <div class="image-gallery">
+                    <!-- Lisää tänne piilotetut kuvat -->
+                    <div class="gallery-item">
+                        <p>Ruskea</p>
+                        <img src="../Maalit/kuvat/ruskea.webp" alt="Piilotettu Kuva 1">
+                    </div>
+                    <div class="gallery-item">
+                        <p>Sininen</p>
+                        <img src="../Maalit/kuvat/sininen.webp" alt="Piilotettu Kuva 2">
+                    </div>
+                    <div class="gallery-item">
+                        <p>Vihreä</p>
+                        <img src="../Maalit/kuvat/vihrea.webp" alt="Piilotettu Kuva 3">
+                    </div>
+                    <div class="gallery-item">
+                        <p>Turkoosi</p>
+                        <img src="../Maalit/kuvat/turkoosi.webp" alt="Piilotettu Kuva 4">
+                    </div>
+                    <div class="gallery-item">
+                        <p>Punainen</p>
+                        <img src="../Maalit/kuvat/punainen.webp" alt="Piilotettu Kuva 5">
+                    </div>
+                </div>
+            </div>
+            <!-- "Lisää" -painike -->
+            <div class="show-more-button">
+                <button id="show-more">Lisää</button>
+                <button id="show-less" style="display: none;">Näytä vähemmän</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer" id="footer">
+        <h2>Kotkantien maalaus- ja tapetointi</h2>
+        <p>Kotkantie 3, 90100 Oulu</p>
+        <p>puh. || 044 999 888 99</p>
+        <p>e-mail. || info@kotkantienmaalaus.fi</p>
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            var bannerLine = document.getElementById('banner-line');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                bannerLine.classList.add("show-box");
+            } else {
+                bannerLine.classList.remove("show-box");
+            }
+        };
+        document.getElementById('show-more').addEventListener('click', function () {
+            var hiddenImages = document.getElementById('hidden-images');
+            hiddenImages.style.display = 'block'; // Näytä piilotetut kuvat
+            this.style.display = 'none'; // Piilota "Lisää" -painike
+            document.getElementById('show-less').style.display = 'inline-block'; // Näytä "Näytä vähemmän" -painike
+        });
+
+        document.getElementById('show-less').addEventListener('click', function () {
+            var hiddenImages = document.getElementById('hidden-images');
+            hiddenImages.style.display = 'none'; // Piilota piilotetut kuvat
+            this.style.display = 'none'; // Piilota "Näytä vähemmän" -painike
+            document.getElementById('show-more').style.display = 'inline-block'; // Näytä "Lisää" -painike uudelleen
+        });
+
+        document.querySelectorAll('.gallery-item img').forEach((img, index) => {
+    img.addEventListener('click', function () {
+        // Näytä modaalinen ikkuna
+        var modal = document.getElementById('imageModal');
+        var modalImg = document.getElementById('modal-image');
+        var description = document.getElementById('image-description');
+        
+        modal.style.display = "flex";
+        modalImg.src = this.src; // Aseta klikattu kuva modalin kuvaan
+        description.innerHTML = this.nextElementSibling ? this.nextElementSibling.innerText : 'Kuvan tiedot'; // Näytä tekstikuvaukset
+        
+    });
+});
+
+// Sulje modal, kun käyttäjä painaa "x"
+document.querySelector('.modal .close').addEventListener('click', function () {
+    var modal = document.getElementById('imageModal');
+    modal.style.display = "none";
+});
+
+// Sulje modal, kun käyttäjä klikkaa modalin ulkopuolelle
+window.onclick = function (event) {
+    var modal = document.getElementById('imageModal');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Värivertailu</title>
+    <link rel="stylesheet" href="Varivertailu.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="container">   
+        <div class="banner-card">
+            <video autoplay muted loop id="background-video">
+                <source src="TaustakuvaTestaaVareja.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="banner-line" id="banner-line">
+                <p>Kotkantien maalaus- ja tapetointi</p>
+                <div class="navigation-buttons">
+                    <a href="../index.html/index.html"><button>Koti</button></a>
+                    <a href="../Palvelut/palvelut.html"><button>Palvelut</button></a>
+                    <a href="../Yhteystiedot/yhteystiedot.html"><button>Yhteystiedot</button></a>
+                </div>
+            </div>
+
+            <div class="wallpaper-text">
+            <h1>Testaa värejä!</h1>
+            </div>
+        </div>
+        <!-- Valitse värin valinta dropdown-valikosta -->
+        <div class="ChooseColors">
+            <label for="color1">Valitse väri 1:</label>
+            <select id="color1">
+                <option value="#DD4132">Fiesta</option>
+                <option value="#9E1030">Jester Red</option>
+                <option value="#FE840E">Turmeric</option>
+                <option value="#FF6F61">Living Coral</option>
+                <option value="#C62168">Pink Peacock</option>
+                <option value="#8D9440">Pepper Stem</option>
+                <option value="#FFD662">Aspen Gold</option>
+                <option value="#00539C">Princess Blue</option>
+                <option value="#755139">Toffee</option>
+                <option value="#D69C2F">Mango Mojito</option>
+                <option value="#616247">Terrarium Moss</option>
+                <option value="#E8B5CE">Sweet Lilac</option>
+                <option value="#D2C29D">Soybean</option>
+                <option value="#343148">Eclipse</option>
+                <option value="#F0EAD6">Sweet Corn</option>
+                <option value="#615550">Brown Granite</option>
+            </select>
+
+            <label for="color2">Valitse väri 2:</label>
+            <select id="color2">
+                <option value="#DD4132">Fiesta</option>
+                <option value="#9E1030">Jester Red</option>
+                <option value="#FE840E">Turmeric</option>
+                <option value="#FF6F61">Living Coral</option>
+                <option value="#C62168">Pink Peacock</option>
+                <option value="#8D9440">Pepper Stem</option>
+                <option value="#FFD662">Aspen Gold</option>
+                <option value="#00539C">Princess Blue</option>
+                <option value="#755139">Toffee</option>
+                <option value="#D69C2F">Mango Mojito</option>
+                <option value="#616247">Terrarium Moss</option>
+                <option value="#E8B5CE">Sweet Lilac</option>
+                <option value="#D2C29D">Soybean</option>
+                <option value="#343148">Eclipse</option>
+                <option value="#F0EAD6">Sweet Corn</option>
+                <option value="#615550">Brown Granite</option>
+            </select>
+        </div>
+
+        <!-- Näytä valitut värit -->
+            <div class="TestColors">
+            <div id="colorBox1" class="color-box" style="background-color: #d2d2d2;"></div>
+            <div id="colorBox2" class="color-box" style="background-color: #d2d2d2;"></div>
+        </div>
+
+        <div class="footer" id="footer">
+            <h2>Kotkantien maalaus- ja tapetointi</h2>
+            <p>Kotkantie 3, 90100 Oulu</p>
+            <p>puh. || 044 999 888 99</p>
+            <p>e-mail. || info@kotkantienmaalaus.fi</p>
+        </div>
+    </div>
+<script>
+// Päivitä ensimmäisen värin laatikko
+document.getElementById("color1").addEventListener("change", function() {
+    let color1 = this.value;
+    document.getElementById("colorBox1").style.backgroundColor = color1;
+});
+
+// Päivitä toisen värin laatikko
+document.getElementById("color2").addEventListener("change", function() {
+    let color2 = this.value;
+    document.getElementById("colorBox2").style.backgroundColor = color2;
+});
+
+window.onscroll = function () {
+            var bannerLine = document.getElementById('banner-line');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                bannerLine.classList.add("show-box");
+            } else {
+                bannerLine.classList.remove("show-box");
+            }
+        };
+</script>
+
+</body>
+</html>

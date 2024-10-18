@@ -1,0 +1,277 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    position: relative;
+}
+
+.banner-card {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.705), rgba(255, 255, 255, 0.322)), url('../Maalit/kuvat/grafitiWall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+    min-height: 100vh;
+}
+
+.banner-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.banner-line p {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.banner-line button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(0, 255, 200);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner-line button.active {
+    background-color: rgb(0, 200, 150);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.wallpaper-text button{
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(0, 255, 200);
+    color: black;
+    margin-bottom: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.show-box {
+    background-color: white;
+}
+
+.show-box p, .show-box button {
+    color: black;
+}
+
+.wallpaper-text {
+    position: relative;
+    padding-top: 15%;
+}
+
+.wallpaper-text h1 {
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.text1 h2 {
+    font-size: 35px;
+    color: white; /* Tekstin väri */
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text1 p {
+    font-size: 25px;
+    color: white; /* Tekstin väri */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Gallery container */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px; /* Pienempi rako kuvien välillä */
+    margin-top: 20px;
+    padding: 0 60px;
+}
+
+/* Gallery item (title and image) */
+.gallery-item {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Smaller margin between title and image */
+.gallery-item p {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+/* Consistent size for all images */
+.gallery-item img {
+    width: 100%; /* Kuva ottaa koko sarakkeen leveyden */
+    height: 200px; /* Kuvat ovat nyt saman korkuisia */
+    object-fit: cover; /* Pitää kuvasuhteen, mutta täyttää annetun tilan */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.footer h2{
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Piilotetut kuvat ovat aluksi piilossa */
+.hidden-images {
+    display: none;
+    background-size: cover;
+}
+
+/* "Lisää" -painikkeen tyyli */
+.show-more-button {
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.show-more-button button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(255, 74, 104);
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-button button:hover {
+    background-color: rgb(255, 100, 120);
+}
+
+.show-less-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.show-less-button button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(255, 74, 104);
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.show-less-button button:hover {
+    background-color: rgb(255, 100, 120);
+}
+
+.red-text{
+    color: rgb(255, 2, 78);
+}
+
+/* Modal (piilotettu aluksi) */
+.modal {
+    display: none; /* Piilotetaan aluksi */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Tumma tausta */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal sisältö */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    position: relative;
+}
+
+/* Sulje-nappi */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+#modal-image {
+    max-width: 90%; /* Kuva voi olla maksimissaan 90% modalin leveydestä */
+    max-height: 80vh; /* Kuva voi olla maksimissaan 80% näkyvän ikkunan korkeudesta */
+    object-fit: contain; /* Kuva skaalaa oikeassa mittasuhteessa */
+}
+
+#image-description {
+    font-size: 18px;
+    color: black;
+}

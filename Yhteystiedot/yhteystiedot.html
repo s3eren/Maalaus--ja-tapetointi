@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yhteystiedot</title>
+    <link rel="stylesheet" href="yhteystiedot.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="banner-card">   
+        <video autoplay muted loop id="background-video">
+            <source src="BlackPaintWallp..mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="gradient-overlay"></div>
+            <div class="banner-line" id="banner-line">
+                <p>Kotkantien maalaus- ja tapetointi</p>
+                <div class="navigation-buttons">
+                    <a href="../index.html/index.html"><button>Koti</button></a>
+                    <a href="../Palvelut/Palvelut.html"><button>Palvelut</button></a>
+                    <button class="active">Yhteystiedot</button>
+                </div>
+            </div>
+            <div class="wallpaper-text">
+                    <h1>Yhteystiedot</h1> 
+                    <a href="../TestaaVareja/TestaaVärejä.html"><button>Testaa värejä</button></a>        
+            </div>
+            <div class="white-section">                
+
+                <div class="maps">
+                    <p>Meidän toimipaikkamme:</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.0774936598236!2d25.508349976923252!3d65.00146707783942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cd5aac2e0dcb%3A0xd0f738d563fe562d!2sKotkantie%203%2C%2090250%20Oulu!5e0!3m2!1sfi!2sfi!4v1727805000468!5m2!1sfi!2sfi" 
+                    width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
+                </div>
+                <div class="text-section">
+                    <p class="yhteystiedot-text">Yhteystiedot:</p>
+                    <p>Osoite || Kotkantie 3,90100 Oulu</p>
+                    <p>Puh. || 044 999 888 99<p>
+                    <p>Sähköp. || info@kotkantienmaalaus.fi</p>               
+                    <p>      
+                </div>
+                <div class="media">    
+                    <p>Media:</p>               
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="../Yhteystiedot/kuvat/IG-logo.webp" alt="Instagram" width="100" height="100">
+                        </a>
+                    </p>
+                    <p>  
+                        <a href="https://www.youtube.com/?app=desktop&gl=FI&hl=fi" target="_blank">
+                            <img src="../Yhteystiedot/kuvat/YT-logo.webp" alt="YouTube" width="100" height="100">
+                        </a>                 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        window.onscroll = function() {
+            var bannerLine = document.getElementById('banner-line');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                bannerLine.classList.add("show-box");
+            } else {
+                bannerLine.classList.remove("show-box");
+            }
+        };
+    </script>
+
+</body>
+</html>

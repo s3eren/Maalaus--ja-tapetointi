@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palvelut</title>
+    <link rel="stylesheet" href="palvelut.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="container"> 
+        <div class="banner-card">
+            <video autoplay muted loop id="background-video">
+                <source src="TaustakuvaPalvelut.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+        <div class="gradient-overlay"></div>
+
+            <div class="banner-line" id="banner-line">
+                <p>Kotkantien maalaus- ja tapetointi</p>
+                <div class="navigation-buttons">
+                    <a href="../index.html/index.html"><button>Koti</button></a>
+                    <button class="active">Palvelut</button>
+                    <a href="../Yhteystiedot/yhteystiedot.html"><button>Yhteystiedot</button></a>
+                </div>
+        </div>
+                <div class="wallpaper-text">
+                <h1>Ohjeet ja vinkit juuri sinulle!</h1>
+                <a href="../TestaaVareja/TestaaVärejä.html"><button>Testaa värejä</button></a>
+                </div>
+            </div>
+    </div>
+
+    <div class="content-flex">
+        <div class="text-section">
+            <div class="text-s1">
+                <p>Seinien maalaus ohje (Tiivistys):</p>
+                <ul>
+                    <li>Valitse oikeanlainen maali. Lue ohjeet maalin valintaan.</li>
+                    <li>Aloita tasoittamalla ja puhdistamalla maalattavat seinäpinnat.</li>
+                    <li>Aseta suojat ja teipit.</li>
+                    <li>Aloita maalaus ikkunan puolelta.</li>
+                    <li>Käsittele kapeat ja hankalat kohdat ensin pensselillä.</li>
+                    <li>Isot pinnat maalataan telalla. Muista kastaa tela kunnolla maaliin.</li>
+                    <li>Tee yksi osio kerrallaan valmiiksi, jotta seinään ei jää ikäviä rajoja.</li>
+                </ul>
+            </div>
+            <div class="text-s2">
+                <p>Katso meidän video ohje tapetoinnista!</p>
+                <p>Välineet:</p>
+                <ul>
+                    <li>Pesusieni ja vettä</li>
+                    <li>Vatupassi</li>
+                    <li>Tapetti liima tai liisteria</li>
+                    <li>Sivellin</li>
+                    <li>Saumausrulla</li>
+                    <li>Tapetointilista</li>
+                    <li>Tela</li>
+                    <li>Tapettiveitsi ja tapettileikkuri</li>
+                    <li>Viivain</li>
+                </ul>
+            </div>
+        </div>
+        <div class="video-section">
+            <p>Seinien maalaus ohje:</p>
+            <iframe src="https://www.youtube.com/embed/snJ8kwcNTqE" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <p>Tapetointi ohje:</p>
+            <iframe src="https://www.youtube.com/embed/cV73f4Ywa04" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="footer" id="footer">
+        <h2>Kotkantien maalaus- ja tapetointi</h2>
+        <p>Kotkantie 3, 90100 Oulu</p>
+        <p>puh. || 044 999 888 99</p>
+        <p>e-mail. || info@kotkantienmaalaus.fi</p>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            var bannerLine = document.getElementById('banner-line');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                bannerLine.classList.add("show-box");
+            } else {
+                bannerLine.classList.remove("show-box");
+            }
+        };
+    </script>
+</body>
+</html>
