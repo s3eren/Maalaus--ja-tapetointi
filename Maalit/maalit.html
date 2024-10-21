@@ -15,7 +15,7 @@
                 <p>Kotkantien maalaus- ja tapetointi</p>
                 <div class="navigation-buttons">
                     <button class="active">Koti</button>
-                    <a href="../Palvelut/Palvelut.html"><button>Palvelut</button></a>
+                    <a href="../Palvelut/palvelut.html"><button>Palvelut</button></a>
                     <a href="../Yhteystiedot/yhteystiedot.html"><button>Yhteystiedot</button></a>
                 </div>
             </div>
@@ -123,7 +123,13 @@
 
         document.querySelectorAll('.gallery-item img').forEach((img, index) => {
     img.addEventListener('click', function () {
-        // Näytä modaalinen ikkuna
+        // Tarkista, onko kyseessä ensimmäinen kuva (indeksi 0)
+        if (index === 0) {
+            // Jos se on ensimmäinen kuva, älä avaa modaalista ikkunaa
+            return;
+        }
+        
+        // Näytä modaalinen ikkuna muille kuville
         var modal = document.getElementById('imageModal');
         var modalImg = document.getElementById('modal-image');
         var description = document.getElementById('image-description');
@@ -131,7 +137,6 @@
         modal.style.display = "flex";
         modalImg.src = this.src; // Aseta klikattu kuva modalin kuvaan
         description.innerHTML = this.nextElementSibling ? this.nextElementSibling.innerText : 'Kuvan tiedot'; // Näytä tekstikuvaukset
-        
     });
 });
 

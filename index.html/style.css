@@ -184,11 +184,6 @@ body {
     cursor: pointer;
     background-color: rgb(255, 74, 104);
     color: black;
-    transition: background-color 0.3s ease;
-}
-
-.show-more-button button:hover {
-    background-color: rgb(255, 100, 120);
 }
 
 .show-less-button {
